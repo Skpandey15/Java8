@@ -4,11 +4,16 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
+    public static String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        System.out.println(getGreeting());
+        //lambda
+        Runnable r =() -> System.out.println(getGreeting());
+        new Thread(r).start();
     }
+
 }
